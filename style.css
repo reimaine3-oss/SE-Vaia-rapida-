@@ -1,0 +1,108 @@
+body {
+    background-color: transparent;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* Removemos a centralização para funcionar bem no Wix */
+}
+
+/* NOVO: Container para empilhar os players */
+.players-container {
+    display: flex;
+    flex-direction: column; /* Empilha os players verticalmente */
+    gap: 20px; /* Esta é a distância simétrica entre eles */
+    padding: 10px; /* Um pequeno espaço nas bordas */
+}
+
+.music-player {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    padding: 10px; 
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px; 
+    gap: 12px; 
+}
+
+/* Botão de Play/Pause (Azul) */
+.control-btn {
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    width: 36px; 
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; 
+    transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+    background: #0056b3;
+}
+
+/* Caixa do Ícone de Volume (Cinza) */
+.icon-wrapper {
+    color: #888; 
+    font-size: 16px;
+    width: 36px; 
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; 
+}
+
+/* Containers dos Sliders */
+.progress-container,
+.volume-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+    min-width: 0; 
+}
+
+/* Estilo dos Sliders */
+.progress-slider,
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%; 
+    height: 5px; 
+    background: #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Estilo do "pino" (thumb) dos sliders */
+.progress-slider::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px; 
+    height: 12px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.volume-slider::-webkit-slider-thumb {
+    background: #007bff;
+}
+
+.progress-slider::-moz-range-thumb,
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
