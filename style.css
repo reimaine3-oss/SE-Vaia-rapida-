@@ -2,15 +2,27 @@ body {
     background-color: transparent;
     font-family: Arial, sans-serif;
     margin: 0;
-    /* Removemos a centralização para funcionar bem no Wix */
 }
 
 /* NOVO: Container para empilhar os players */
 .players-container {
     display: flex;
-    flex-direction: column; /* Empilha os players verticalmente */
-    gap: 20px; /* Esta é a distância simétrica entre eles */
-    padding: 10px; /* Um pequeno espaço nas bordas */
+    flex-direction: column; 
+    
+    /* * MUDANÇA 1: Distância entre os players 
+     * Alterado de 20px para 32px, com base na sua imagem.
+     */
+    gap: 32px; 
+    
+    padding: 10px; 
+
+    /* * MUDANÇA 2: Flexibilidade (Maleabilidade)
+     * Define que o container ocupa 100% do espaço no Wix, 
+     * mas não passa de 400px (para manter o design).
+     */
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
 }
 
 .music-player {
@@ -21,8 +33,14 @@ body {
     background-color: #f8f8f8;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 400px; 
+
+    /* * MUDANÇA 2 (Complemento): 
+     * O player agora ocupa 100% do .players-container
+     */
+    width: 100%; 
+    
     gap: 12px; 
+    box-sizing: border-box; /* Garante que o padding não afete a largura */
 }
 
 /* Botão de Play/Pause (Azul) */
