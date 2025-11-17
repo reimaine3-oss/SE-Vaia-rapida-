@@ -1,46 +1,25 @@
 body {
     background-color: transparent;
     font-family: Arial, sans-serif;
-    margin: 0;
-}
-
-/* NOVO: Container para empilhar os players */
-.players-container {
     display: flex;
-    flex-direction: column; 
-    
-    /* * MUDANÇA 1: Distância entre os players 
-     * Alterado de 20px para 32px, com base na sua imagem.
-     */
-    gap: 32px; 
-    
-    padding: 10px; 
-
-    /* * MUDANÇA 2: Flexibilidade (Maleabilidade)
-     * Define que o container ocupa 100% do espaço no Wix, 
-     * mas não passa de 400px (para manter o design).
-     */
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
 }
 
 .music-player {
     display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    padding: 10px; 
+    flex-direction: row; /* Faz tudo ficar em uma linha */
+    align-items: center; /* Alinha verticalmente */
+    padding: 10px; /* Um pouco menos de padding vertical */
     background-color: #f8f8f8;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-    /* * MUDANÇA 2 (Complemento): 
-     * O player agora ocupa 100% do .players-container
-     */
-    width: 100%; 
-    
-    gap: 12px; 
-    box-sizing: border-box; /* Garante que o padding não afete a largura */
+    /* Largura maior para caber tudo na horizontal */
+    width: 400px; 
+    gap: 12px; /* Espaço entre os 4 elementos */
 }
 
 /* Botão de Play/Pause (Azul) */
@@ -56,7 +35,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0; 
+    flex-shrink: 0; /* Impede que encolha */
     transition: background-color 0.2s;
 }
 
@@ -66,6 +45,7 @@ body {
 
 /* Caixa do Ícone de Volume (Cinza) */
 .icon-wrapper {
+    /* IMPORTANTE: Mudança de cor para cinza, como na imagem */
     color: #888; 
     font-size: 16px;
     width: 36px; 
@@ -73,7 +53,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0; 
+    flex-shrink: 0; /* Impede que encolha */
 }
 
 /* Containers dos Sliders */
@@ -81,8 +61,8 @@ body {
 .volume-container {
     display: flex;
     align-items: center;
-    flex-grow: 1; 
-    min-width: 0; 
+    flex-grow: 1; /* Faz os dois sliders dividirem o espaço restante */
+    min-width: 0; /* Correção de bug do flexbox */
 }
 
 /* Estilo dos Sliders */
@@ -105,12 +85,14 @@ body {
     appearance: none;
     width: 12px; 
     height: 12px;
+    /* O pino do slider de progresso continua azul */
     background: #007bff;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* O pino do slider de volume também será azul (padrão) */
 .volume-slider::-webkit-slider-thumb {
     background: #007bff;
 }
